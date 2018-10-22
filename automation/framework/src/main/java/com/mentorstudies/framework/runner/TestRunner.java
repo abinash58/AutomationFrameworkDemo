@@ -27,9 +27,9 @@ public class TestRunner {
 
 		// Read test methods from excel file
 		String testCaseFileName = properties.getProperty("TEST_CASES_FILE");
-		InputStream testCaseFileIS = TestRunner.class.getClass().getClassLoader().getResourceAsStream(testCaseFileName);
+		InputStream testCaseFileIS = TestRunner.class.getClassLoader().getResourceAsStream(testCaseFileName);
 		XSSFWorkbook workbook = new XSSFWorkbook(testCaseFileIS);
-
+		XSSFSheet sheet = workbook.getSheetAt(0);
 
 		Map<String, List<String>> classMethodsMap = new HashMap<String, List<String>>();
 		String currentClassName = null;
